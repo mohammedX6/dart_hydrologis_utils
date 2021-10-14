@@ -14,10 +14,14 @@ class PointSymbolizer {
       if (markElem != null) {
         var wkNameElem = _findSingleElement(markElem, WELLKNOWNNAME);
         if (wkNameElem != null) {
-          try {
-            style.markerName = WktMarkers.forName(wkNameElem.text).name;
-          } catch (e) {
-            style.markerName = WktMarkers.CIRCLE.name;
+          if (Uri.parse(wkNameElem.text).isAbsolute) {
+            style.iconURL = wkNameElem.text;
+          } else {
+            try {
+              style.markerName = WktMarkers.forName(wkNameElem.text).name;
+            } catch (e) {
+              style.markerName = WktMarkers.CIRCLE.name;
+            }
           }
         }
         _getFill(markElem, style);
@@ -86,3 +90,4 @@ class TextSymbolizer {
     }
   }
 }
+//pd

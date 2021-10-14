@@ -9,28 +9,30 @@ class PointStyle {
   String strokeColorHex = "#000000";
   double strokeWidth = 1.0;
   double strokeOpacity = 1.0;
-
+  String iconURL='';
   @override
   bool operator ==(Object other) =>
       other is PointStyle &&
-      other.markerName == markerName &&
-      other.markerSize == markerSize &&
-      other.fillColorHex == fillColorHex &&
-      other.fillOpacity == fillOpacity &&
-      other.strokeColorHex == strokeColorHex &&
-      other.strokeWidth == strokeWidth &&
-      other.strokeOpacity == strokeOpacity;
+          other.markerName == markerName &&
+          other.markerSize == markerSize &&
+          other.fillColorHex == fillColorHex &&
+          other.fillOpacity == fillOpacity &&
+          other.strokeColorHex == strokeColorHex &&
+          other.strokeWidth == strokeWidth &&
+          other.strokeOpacity == strokeOpacity&&
+          other.iconURL == iconURL;
 
   @override
   int get hashCode => HashUtilities.hashObjects([
-        markerName,
-        markerSize,
-        fillColorHex,
-        fillOpacity,
-        strokeColorHex,
-        strokeWidth,
-        strokeOpacity
-      ]);
+    markerName,
+    markerSize,
+    fillColorHex,
+    fillOpacity,
+    strokeColorHex,
+    strokeWidth,
+    strokeOpacity,
+    iconURL
+  ]);
 }
 
 /// Default line style class
@@ -42,9 +44,9 @@ class LineStyle {
   @override
   bool operator ==(Object other) =>
       other is LineStyle &&
-      other.strokeColorHex == strokeColorHex &&
-      other.strokeWidth == strokeWidth &&
-      other.strokeOpacity == strokeOpacity;
+          other.strokeColorHex == strokeColorHex &&
+          other.strokeWidth == strokeWidth &&
+          other.strokeOpacity == strokeOpacity;
 
   @override
   int get hashCode =>
@@ -62,11 +64,11 @@ class PolygonStyle {
   @override
   bool operator ==(Object other) =>
       other is PolygonStyle &&
-      other.fillColorHex == fillColorHex &&
-      other.fillOpacity == fillOpacity &&
-      other.strokeColorHex == strokeColorHex &&
-      other.strokeWidth == strokeWidth &&
-      other.strokeOpacity == strokeOpacity;
+          other.fillColorHex == fillColorHex &&
+          other.fillOpacity == fillOpacity &&
+          other.strokeColorHex == strokeColorHex &&
+          other.strokeWidth == strokeWidth &&
+          other.strokeOpacity == strokeOpacity;
 
   @override
   int get hashCode => HashUtilities.hashObjects(
@@ -84,11 +86,11 @@ class TextStyle {
   @override
   bool operator ==(Object other) =>
       other is TextStyle &&
-      other.labelName == labelName &&
-      other.textColor == textColor &&
-      other.size == size &&
-      other.haloSize == haloSize &&
-      other.haloColor == haloColor;
+          other.labelName == labelName &&
+          other.textColor == textColor &&
+          other.size == size &&
+          other.haloSize == haloSize &&
+          other.haloColor == haloColor;
 
   @override
   int get hashCode => HashUtilities.hashObjects(
